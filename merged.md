@@ -12,6 +12,7 @@ over time.
 
 - [Course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
 - [Book](https://drive.google.com/file/d/1opPSz5AZ_kVa1uWOdOiveNiBFiEOHjkG/view)
+- [Implementation to generate pictures in the book](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction)
 
 ### Definition
 
@@ -575,6 +576,8 @@ state, evaluate all actions we can pick from that state, and for each state
 compute a weighted sum of the *old* state-values of all states reachable when
 picking that action.
 
+![](https://i.imgur.com/wdjd4GX.png)
+
 ## Policy Iteration
 
 Now that we have means to evaluate a policy iteratively, we can look into finding an optimal policy. In general, this is composed of two simple steps:
@@ -646,6 +649,8 @@ are two basic methods:
 1. Use $\varepsilon$-convergence, meaning we stop when all values change less than some amount $\varepsilon$ or
 2. Just use a fixed number of steps $k$ (thereby introducing another hyperparameter).
 
+![](https://i.imgur.com/uApqMe4g.png)
+
 ## Value Iteration
 
 The next dynamic programming method we want to consider is *value iteration*. In
@@ -694,6 +699,9 @@ $$q_\star(s, a) = \mathcal{R}_s^a + \gamma\sum_{s \in \mathcal{S}} \mathcal{P}_{
 
 and plug the latter into the former. Basically, at each time step we will update
 the value function for a particular state to be the maximum q value.
+
+![](https://i.imgur.com/7OX8Oik.png)
+
 
 ## Summary of DP Algorithms (so far)
 
@@ -821,6 +829,8 @@ and perform the $\text{total return} / \text{number of visits}$ update. To
 compute the total return for each state, an efficient method is to loop through
 the array backwards and multiply the accumulated reward with $\gamma$ each time
 (instead of looping forwards $N$ times, making each update quadratic).
+
+![](https://i.imgur.com/OyJyFOt.png)
 
 ## Temporal Difference Learning
 
@@ -1061,6 +1071,10 @@ $$\pi \gets \varepsilon-\text{greedy}(Q)$$
 
 This method is called *GLIE Monte-Carlo control*.
 
+![MC Exploring first](https://i.imgur.com/0gBykjg.png)
+
+![](https://i.imgur.com/QX6XMu0.png)
+
 ### SARSA
 
 The first practical algorithm we want to investigate that performs Q-function
@@ -1142,6 +1156,8 @@ $\text{SARSA}(\lambda)$ algorithm:
                 - $Q(s, a) \gets Q(s, a) + \alpha\delta_t E_t(s, a)$
                 - $E(s, a) \gets \gamma\lambda E(s, a)$ # Decay
         5. $S \gets S', A \gets A'$
+
+![](https://i.imgur.com/f6lbu7c.png)
 
 ## Off Policy Learning
 
@@ -1240,6 +1256,7 @@ which will converge to the optimal action-value function $q_\star(s, a)$. Note
 again how this is just the Bellman optimality equation for the state-value
 function.
 
+![](https://i.imgur.com/1i5MkwN.png)
 
 # Reinforcement Learning: Value Approximation (Lecture 6)
 
