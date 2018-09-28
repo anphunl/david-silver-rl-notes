@@ -576,7 +576,7 @@ state, evaluate all actions we can pick from that state, and for each state
 compute a weighted sum of the *old* state-values of all states reachable when
 picking that action.
 
-![](https://i.imgur.com/wdjd4GX.png)
+![](./pics/Policy_Evalution.png)
 
 ## Policy Iteration
 
@@ -649,7 +649,7 @@ are two basic methods:
 1. Use $\varepsilon$-convergence, meaning we stop when all values change less than some amount $\varepsilon$ or
 2. Just use a fixed number of steps $k$ (thereby introducing another hyperparameter).
 
-![](https://i.imgur.com/uApqMe4g.png)
+![](./pics/Policy_Iteration.png)
 
 ## Value Iteration
 
@@ -700,7 +700,7 @@ $$q_\star(s, a) = \mathcal{R}_s^a + \gamma\sum_{s \in \mathcal{S}} \mathcal{P}_{
 and plug the latter into the former. Basically, at each time step we will update
 the value function for a particular state to be the maximum q value.
 
-![](https://i.imgur.com/7OX8Oik.png)
+![](./pics/Value_Iteration.png)
 
 
 ## Summary of DP Algorithms (so far)
@@ -830,7 +830,7 @@ compute the total return for each state, an efficient method is to loop through
 the array backwards and multiply the accumulated reward with $\gamma$ each time
 (instead of looping forwards $N$ times, making each update quadratic).
 
-![](https://i.imgur.com/OyJyFOt.png)
+![](./pics/First-Visit_MC_Prediction.png)
 
 ## Temporal Difference Learning
 
@@ -1071,9 +1071,9 @@ $$\pi \gets \varepsilon-\text{greedy}(Q)$$
 
 This method is called *GLIE Monte-Carlo control*.
 
-![MC Exploring first](https://i.imgur.com/0gBykjg.png)
+![](./pics/MC_ES.png)
 
-![](https://i.imgur.com/QX6XMu0.png)
+![](./pics/MC_without_ES.png)
 
 ### SARSA
 
@@ -1157,7 +1157,7 @@ $\text{SARSA}(\lambda)$ algorithm:
                 - $E(s, a) \gets \gamma\lambda E(s, a)$ # Decay
         5. $S \gets S', A \gets A'$
 
-![](https://i.imgur.com/f6lbu7c.png)
+![](./pics/Sarsa_TD.png)
 
 ## Off Policy Learning
 
@@ -1256,7 +1256,7 @@ which will converge to the optimal action-value function $q_\star(s, a)$. Note
 again how this is just the Bellman optimality equation for the state-value
 function.
 
-![](https://i.imgur.com/1i5MkwN.png)
+![](./pics/Q-Learning.png)
 
 # Reinforcement Learning: Value Approximation (Lecture 6)
 
